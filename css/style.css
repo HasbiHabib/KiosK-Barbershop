@@ -159,8 +159,9 @@ button:hover {
 .camera-view {
     width: 100%;
     height: 100%;
-    background: rgba(255,255,255,0.15); /* placeholder */
+    object-fit: cover;
     border-radius: 15px;
+    background: #000; /* kalau kamera belum muncul */
 }
 
 .btn-photo-icon {

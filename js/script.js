@@ -51,6 +51,30 @@ if (btnPhotoIcon && photoIcon) {
     });
 }
 
+// =======================
+// CAMERA SYSTEM (PAGE 2)
+// =======================
+async function startCamera() {
+    const cam = document.getElementById("cameraView");
+    if (!cam) return; // halaman bukan face.html
+
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode: "user" },     // kamera depan
+            audio: false
+        });
+
+        cam.srcObject = stream;
+    } 
+    catch (err) {
+        console.error("Camera Error:", err);
+        alert("Tidak bisa mengakses kamera!");
+    }
+}
+
+startCamera();
+
+
 
 
 
