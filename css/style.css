@@ -1,0 +1,203 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+    font-family: "Gabarito", Arial, sans-serif;
+}
+
+.kiosk-container {
+    width: 100vw;
+    height: 100vh;
+    max-width: calc(100vh * 9/16); /* Lock ratio 9:16 */
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* BACKGROUND IMAGE */
+.bg {
+    position: absolute;
+    inset: 0;
+    background-image: url("../Image/Background/BarberBackground1.jpg");
+    background-size: cover;       /* Fullscreen */
+    background-position: center;  /* Kamu bisa atur: top, center, bottom, 30%, 70%, dll */
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+
+/* GRADIENT */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 25%,               
+        rgba(4,18,45,0.85) 70%,         
+        rgba(4,18,45,1) 85%
+    );
+    z-index: 2;
+}
+
+
+/* CONTENT */
+.content {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    padding: 0 30px;
+    text-align: center;
+    z-index: 3;
+}
+
+.logo {
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;           /* bisa kamu atur bebas */
+    z-index: 4;             /* di atas gradient */
+}
+
+/* TEXT */
+h1 {
+    font-size: 6.4rem;     
+    font-weight: 900;
+    color: white;
+    line-height: 0.8;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+p {
+    margin-top: 1px;
+    font-size: 2.45rem;
+    color: #dfe7f1;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.5;   /* spacing antar baris */
+}
+
+
+/* BUTTON */
+button {
+    margin-top: 60px;
+    width: 45%;
+    padding: 25px 0;        
+    font-size: 2.0rem;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: 600;
+    font-family: "Gabarito", sans-serif;  /* pakai font Gabarito */
+}
+
+
+button:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+
+
+/* ===========================
+   PAGE 2 – FACE SCANNING
+=========================== */
+
+.bg-blue {
+    position: absolute;
+    inset: 0;
+    background: #04122D;  /* biru gelap polos */
+    z-index: 1;
+}
+
+.face-ready-text {
+    margin-top: 48px;
+    font-size: 1.5rem;     /* diperkecil */
+    font-weight: 600;
+    color: #dfe7f1;
+    letter-spacing: 1px;
+    margin-bottom: 10px;    /* kasih jarak ke bawah */
+}
+
+.face-content {
+    position: absolute;
+    top: 12%;
+    width: 100%;
+    text-align: center;
+    z-index: 4;
+    padding: 0 35px;
+}
+
+.face-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 35px;
+    font-family: "Gabarito", sans-serif;  /* pakai font Gabarito */
+}
+
+.camera-frame {
+    width: 88%;
+    height: 800px;
+    border-radius: 25px;
+    border: 5px solid white;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.camera-view {
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.15); /* placeholder */
+    border-radius: 15px;
+}
+
+.btn-photo-icon {
+    margin-top: 35px;
+    width: 120px;
+    height: 120px;
+
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-photo-icon:focus,
+.btn-photo-icon:active,
+.btn-photo-icon:hover {
+    outline: none !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.btn-photo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none; 
+}
+
+
+.face-desc {
+    margin-top: 45px;
+    font-size: 1.3rem;
+    color: #dfe7f1;
+    line-height: 1.45;
+    font-family: "Gabarito", sans-serif;  /* pakai font Gabarito */
+}
