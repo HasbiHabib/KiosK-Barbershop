@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hasil Pemindaian</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="kiosk-container">
+        
+    <div class="bg-blue"></div>
+    <!--img src="../Image/Logo/BarbershopLogo.png" class="logo">-->
+     
+    <div class="haircut-container">
+
+        <h1 class="title">REKOMENDASI HAIRCUT</h1>
+
+         <div class="haircut-recommendation-container">
+            <!-- Percentage -->
+            <div class="percentage-box">
+                <span>80%</span>
+            </div>
+
+            <!-- Main Result -->
+            <div class="haircut-main-frame">
+                <img class="haircut-main-img" src="Image/Mock/haircut1.png">
+                <div class="haircut-caption">Rekomendasi Terbaik Buatmu:<br><b>Comma</b></div>
+            </div>
+        </div>
+
+        <!-- Other Choices -->
+        <div class="other-choice-title">Pilihan Lain Buatmu</div>
+
+        <div class="other-choice-list">
+            <div class="other-choice-card">
+                <div class="top-badge">60%</div>
+                <img src="Image/Mock/opt1.png">
+                Side Cut
+            </div>
+
+            <div class="other-choice-card">
+                <div class="top-badge">40%</div>
+                <img src="Image/Mock/opt2.png">
+                Comma
+            </div>
+
+            <div class="other-choice-card">
+                <div class="top-badge">30%</div>
+                <img src="Image/Mock/opt3.png">
+                Punk Durian
+            </div>
+        </div>
+
+        <!-- Use button -->
+        <button class="btn-use">Gunakan Ini</button>
+
+        <!-- Footer Buttons -->
+        <div class="bottom-btn-row">
+            <button class="btn-secondary" onclick="goToPhoto()">Foto Ulang</button>
+            <button class="btn-secondary" onclick="changeModel()">Model Lain</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>

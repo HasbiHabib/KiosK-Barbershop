@@ -202,3 +202,209 @@ button:hover {
     line-height: 1.45;
     font-family: "Gabarito", sans-serif;  /* pakai font Gabarito */
 }
+
+
+/* ===========================
+   PAGE 3 – RESULT PAGE
+=========================== */
+
+.result-content {
+    position: absolute;
+    top: 12%;
+    width: 100%;
+    text-align: center;
+    padding: 0 35px;
+    z-index: 4;
+}
+
+.result-text {
+    margin-top: 48px;
+    font-size: 1.8rem;
+    color: #dfe7f1;
+    font-weight: 600;
+}
+
+.result-shape {
+    margin-top: 8px;
+    font-size: 3.4rem;
+    font-weight: 800;
+    color: white;
+}
+
+/* BUTTON GROUP → VERTICAL ALIGNMENT */
+.button-group {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;   /* vertical */
+    gap: 22px;                /* spacing antar tombol */
+    align-items: center;
+}
+
+/* PRIMARY BUTTON – Lihat Rekomendasi */
+.btn-primary {
+    width: 45%;
+    padding: 20px 0;          /* height lebih besar */
+    background-color: #415A77; /* biru muda seperti di gambar */
+    color: #ffffff;
+    border-radius: 18px;
+    border: none;
+    border: 3px solid white;
+    font-size: 2.3rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+/* SECONDARY BUTTON – Foto Ulang */
+.btn-secondary {
+    margin-top: 0px;
+    width: 45%;
+    padding: 15px 0;         /* lebih kecil */
+    background: transparent;
+    color: white;
+    border: 3px solid white;
+    border-radius: 16px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+
+/* ===========================
+   PAGE 4 – HAIR RECOMMENDATION
+=========================== */
+
+.haircut-container {
+    top: 3%;
+    width: 70%;
+    z-index: 4;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.haircut-recommendation-container {
+    border: 2px solid white;
+    margin: auto;
+    padding: 20px 0px;
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+}
+
+.haircut-container .title {
+    color: white;
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+.haircut-container .percentage-box {
+    border: 2px solid white;
+    width: 95%;
+    margin: auto;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.haircut-container .percentage-box span {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.haircut-main-frame {
+    border-radius: 16px;
+    padding: 10px;
+    width: 97.5%;
+    margin: auto;
+}
+
+.haircut-main-img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.haircut-caption {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 15px;
+}
+
+.other-choice-title {
+    color: white;
+    margin-top: 32px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.other-choice-list {
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+    margin-bottom: 20px;
+}
+
+.other-choice-card {
+    background-color: #102033;
+    border: 2px solid #60a5fa;
+    border-radius: 10px;
+    width: 90px;
+    padding: 6px;
+    text-align: center;
+    position: relative;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.other-choice-card img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.top-badge {
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1e3a8a;
+    color: white;
+    font-size: 0.7rem;
+    padding: 3px 6px;
+    border-radius: 8px;
+    border: 1px solid white;
+}
+
+.btn-use {
+    background-color: white;
+    color: #0c1b2d;
+    padding: 12px 15px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    border-radius: 12px;
+    width: 220px;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 18px;
+}
+
+.bottom-btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.bottom-btn-row .btn-secondary {
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
