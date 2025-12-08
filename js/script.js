@@ -208,7 +208,81 @@ function goToPage4() {
 // ======================= 
 
 function goToPage7() {
-    window.location.href = "HaircutRecommendation.html";
+    window.location.href = "additionalservice.html";
 }
 
 
+// =======================
+// (PAGE 7)
+// ======================= 
+
+const basePrice = 20000;
+
+const services = [
+    { name: "Hair Spa", price: 20000 },
+    { name: "Hair Wash", price: 15000 },
+    { name: "Beard Trim", price: 10000 },
+    { name: "Color Styling", price: 30000 },
+];
+
+let selected = [];
+
+const listEl = document.querySelector(".page7-service-list");
+const addonEl = document.querySelector(".page7-addon-list");
+const totalEl = document.querySelector(".page7-total-price");
+
+function renderServices() {
+    listEl.innerHTML = "";
+
+    services.forEach((s, i) => {
+        const row = document.createElement("div");
+        row.className = "page7-service-item";
+        row.innerHTML = `
+            <div class="page7-service-info">
+                <span class="page7-service-name">${s.name}</span>
+                <span class="page7-service-price">Rp ${s.price/1000} K</span>
+            </div>
+            <div class="page7-toggle"></div>
+        `;
+
+
+        const toggle = row.querySelector(".page7-toggle");
+        toggle.addEventListener("click", () => toggleService(s, toggle));
+
+        listEl.appendChild(row);
+    });
+}
+
+function toggleService(service, el) {
+    const active = selected.find(x => x.name === service.name);
+
+    if (active) {
+        selected = selected.filter(x => x.name !== service.name);
+        el.classList.remove("active");
+    } else {
+        selected.push(service);
+        el.classList.add("active");
+    }
+
+    updatePrice();
+}
+
+function updatePrice() {
+    addonEl.innerHTML = "";
+    let total = basePrice;
+
+    selected.forEach(s => {
+        const div = document.createElement("div");
+        div.innerHTML = `<span>${s.name}</span><span>Rp ${s.price/1000} K</span>`;
+        addonEl.appendChild(div);
+        total += s.price;
+    });
+
+    totalEl.textContent = "Rp " + (total/1000) + " K";
+}
+
+renderServices();
+
+function goToPage8() {
+    window.location.href = "PreviewHaircut.html";
+}

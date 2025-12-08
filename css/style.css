@@ -668,3 +668,198 @@ button:hover {
     cursor: pointer;
     margin-top: 0;        /* pastikan ga ada jarak ekstra */
 }
+
+
+/* ===========================
+   PAGE 7 – ADDITIONAL SERVICE
+=========================== */
+
+
+.page7 .page7-container {
+    position: relative;
+    z-index: 4;
+    width: 75%;
+    margin: auto;
+    padding-top: 20%;
+    text-align: center;
+}
+
+.page7-title {
+    color: white;
+    font-size: 2.7rem;
+    font-weight: 800;
+    margin-bottom: 5%;
+}
+
+.page7-panel {
+    /*border: 2px solid white;*/
+    border-radius: 20px;
+    padding: 20px;
+    max-height: 1500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.page7-service-list {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding-right: 6px;
+}
+
+.page7-service-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    color: white;
+}
+
+.page7-service-price {
+    margin-left: auto;
+    font-weight: 600;
+    padding-left: 100px;
+}
+
+
+
+.page7-service-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.page7-service-list::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}
+
+.page7-service-list::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.2);
+}
+
+.page7-service-item {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 0.95rem;
+}
+
+.page7-toggle {
+    width: 42px;
+    height: 22px;
+    background: #888;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.page7-toggle::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: 0.3s;
+}
+
+.page7-toggle.active {
+    background: #415A77;
+}
+
+.page7-toggle.active::before {
+    left: 22px;
+}
+
+.page7-price-box {
+    border: 2px solid white;
+    border-radius: 12px;
+    padding: 14px;
+    color: white;
+    font-size: 0.95rem;
+    margin-top: 10px;
+    width: 60%;
+    margin-bottom: 0;
+}
+
+.page7-price-box div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.page7-total {
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.page7-btn-row {
+    display: flex;
+    gap: 12px;
+}
+
+.page7-bottom-bar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;   /* jangan space-between */
+    gap: 20px;                     /* jarak kecil saja */
+    margin-top: 20px;
+}
+
+.page7-btn-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;                     /* jarak antar tombol */
+}
+
+.page7-price-box {
+    width: 60%;
+    margin-right: 10px;
+}
+
+.page7-btn-primary,
+.page7-btn-secondary {
+    width: 250px;
+    background: #415A77;
+    border: 3px solid white;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 100;
+
+    padding: 8px 0;     /* lebih kecil */
+    margin: 0 !important; /* hapus margin bawaan */
+    line-height: 1;     /* hilangkan jarak vertikal */
+}
+
+.page7-btn-primary {
+    padding: 7%;
+}
+.page7-btn-secondary {
+    background: transparent;
+    font-size: 1.0rem;
+}
+
+
+.page7-addon-list {
+    display: flex;
+    flex-direction: column;   /* bikin jadi ke bawah */
+    align-items: stretch;
+    gap: 4px;                 /* jarak antar item */
+    margin-top: 6px;
+}
+
+/* setiap baris addon */
+.page7-addon-list div {
+    display: flex;
+    justify-content: space-between;  /* nama kiri, harga kanan */
+    font-size: 0.9rem;
+}
