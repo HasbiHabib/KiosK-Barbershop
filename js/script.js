@@ -157,7 +157,10 @@ if (photoResult) {
 // ======================= 
 
 function goToPhoto() {
-    window.location.href = "FaceScanning.html";
+    window.location.href = "FacePhoto.html";
+}
+function goToPage5() {
+    window.location.href = "HariRecommendation_More.html";
 }
 
 function changeModel() {
@@ -173,6 +176,28 @@ function loadHaircutRecommendation(data) {
     document.querySelector(".percentage-box span").textContent = data.percentage + "%";
 }
 
+
+// =======================
+// (PAGE 5)
+// ======================= 
+
+function filterHaircut() {
+    const input = document.getElementById("searchHaircut").value.toLowerCase();
+    const cards = document.querySelectorAll(".page5-card");
+
+    cards.forEach(card => {
+        const name = card.dataset.name;
+        if (name.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+function goToPage4() {
+    window.location.href = "HaircutRecommendation.html";
+}
 
 
 

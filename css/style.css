@@ -289,7 +289,7 @@ button:hover {
     padding: 20px 0px;
     text-align: center;
     position: relative;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .haircut-container .title {
@@ -316,14 +316,19 @@ button:hover {
 }
 
 .haircut-main-frame {
-    border-radius: 16px;
-    padding: 10px;
-    width: 97.5%;
-    margin: auto;
+    width: 100%;
+}
+
+.haircut-main-frame {
+    aspect-ratio: 1 / 1;       
+    overflow: hidden;        
 }
 
 .haircut-main-img {
-    width: 100%;
+    width: 94%;
+    height: 100%;
+    object-fit: cover;         
+    object-position: center;  
     border-radius: 10px;
 }
 
@@ -345,16 +350,16 @@ button:hover {
 .other-choice-list {
     display: flex;
     justify-content: center;
-    gap: 13px;
+    gap: 40px;
     margin-bottom: 20px;
 }
 
 .other-choice-card {
-    background-color: #102033;
-    border: 2px solid #60a5fa;
+    background-color: #10203300;
+    border: 2px solid #ffffff;
     border-radius: 10px;
-    width: 90px;
-    padding: 6px;
+    width: 35%;
+    padding: 10px;
     text-align: center;
     position: relative;
     color: white;
@@ -364,47 +369,211 @@ button:hover {
 
 .other-choice-card img {
     width: 100%;
-    border-radius: 6px;
-}
-
-.top-badge {
-    position: absolute;
-    top: -9px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #1e3a8a;
-    color: white;
-    font-size: 0.7rem;
-    padding: 3px 6px;
+    aspect-ratio: 3 / 4;    
+    object-fit: cover;       
+    object-position: center;
     border-radius: 8px;
-    border: 1px solid white;
 }
 
-.btn-use {
-    background-color: white;
-    color: #0c1b2d;
-    padding: 12px 15px;
-    font-size: 1.1rem;
-    font-weight: 800;
-    border-radius: 12px;
-    width: 220px;
-    cursor: pointer;
+.mini-percentage-box {
+    border: 2px solid white;
+    width: 100%;
+    padding: 4px 8px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.mini-percentage-box span {
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.page4-btn-main {
+    width: 65%;
+    padding: 15px 0;          /* height lebih besar */
+    background-color: #415A77; /* biru muda seperti di gambar */
+    color: #ffffff;
+    border-radius: 18px;
     border: none;
-    margin-bottom: 18px;
+    border: 3px solid white;
+    font-size: 2rem;
+    font-weight: 400;
+    cursor: pointer;
 }
 
-.bottom-btn-row {
+.page4-btn-row {
     display: flex;
     justify-content: center;
-    gap: 18px;
+    gap: 16px;
 }
 
-.bottom-btn-row .btn-secondary {
-    border: 2px solid white;
-    background-color: transparent;
+.page4-btn-secondary {
+    margin-top: 20px;
+    width: 31.5%;
+    padding: 10px 5px;         /* lebih kecil */
+    background: transparent;
     color: white;
-    font-size: 1rem;
+    border: 3px solid white;
+    border-radius: 16px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+
+/* ===========================
+   PAGE 5 – HAIRCUT SELECT
+=========================== */
+
+.page5-container {
+    position: relative;
+    z-index: 4;
+    width: 75%;
+    margin: auto;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.page5-title {
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.page5-panel {
+    border: 2px solid white;
+    border-radius: 18px;
+    padding: 15px;
+
+    max-height: 1470px;        /* batas tinggi panel */
+    display: flex;
+    flex-direction: column;
+}
+
+.page5-panel-title {
+    margin-top: 20px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+/* Search Bar */
+.page5-search-box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 2px solid white;
+    background-color: #415A77;
+    border-radius: 8px;
+    padding: 17px 15px;
+    margin-bottom: 12px;
+}
+
+.page5-search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: "Gabarito", sans-serif;
+    font-size: 0.9rem;
+}
+
+.page5-burger,
+.page5-search-icon {
+    color: white;
+    font-size: 0.9rem;
+}
+
+.page5-search-box input::placeholder {
+    color: rgb(255, 255, 255);
+    opacity: 0.5;   /* supaya tidak transparan */
+}
+
+/* Scroll Area */
+.page5-list {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 10px;
+    padding-right: 6px;
+}
+
+
+/* Custom Scrollbar */
+.page5-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.page5-list::-webkit-scrollbar-thumb {
+    background: white;
     border-radius: 10px;
-    padding: 10px 20px;
+}
+
+.page5-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* Cards Grid */
+.page5-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.page5-card {
+    background-color: #10203300;
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.page5-card img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+.page5-name {
+    margin-top: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.page5-card .page5-percent {
+    position: static;
+    border: 2px solid white;
+    width: 100%;
+    padding: 3px 6px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    text-align: left;
+    background: transparent;
+}
+
+/* Back Button */
+.page5-back-btn {
+    margin-top: 25px;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 12px;
+    padding: 10px 0;
+    width: 40%;
+    font-size: 1rem;
     cursor: pointer;
 }
