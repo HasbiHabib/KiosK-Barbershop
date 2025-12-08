@@ -162,6 +162,9 @@ function goToPhoto() {
 function goToPage5() {
     window.location.href = "HariRecommendation_More.html";
 }
+function goToPage6() {
+    window.location.href = "PreviewHaircut.html";
+}
 
 function changeModel() {
     alert("Fitur model lain akan ditambahkan nanti.");
@@ -200,6 +203,12 @@ function goToPage4() {
 }
 
 
+// =======================
+// (PAGE 6)
+// ======================= 
 
+function goToPage7() {
+    window.location.href = "HaircutRecommendation.html";
+}
 
 

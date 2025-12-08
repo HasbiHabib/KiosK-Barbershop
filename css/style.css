@@ -577,3 +577,94 @@ button:hover {
     font-size: 1rem;
     cursor: pointer;
 }
+
+/* ===========================
+   PAGE 6 – HAIRCUT PREVIEW
+=========================== */
+
+.page6-container {
+    position: relative;
+    z-index: 4;
+    width: 75%;
+    margin: auto;
+    padding-top: 200px;
+    text-align: center;
+}
+
+.page6-title {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.page6-preview-box {
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 18px;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+.page6-preview-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+}
+
+.page6-haircut-name {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.page6-desc {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 60px;
+}
+
+.page6-question {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+/* Atur jarak antar tombol */
+.page6-button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.page6-btn-primary {
+    width: 60%;
+    padding: 20px 0;
+    background-color: #415A77;
+    color: #ffffff;
+    border-radius: 16px;
+    border: 3px solid white;
+    font-size: 1.3rem;
+    font-weight: 400;
+    cursor: pointer;
+    margin-top: 5px;      /* tambah biar ga nempel banget */
+}
+
+.page6-btn-secondary {
+    width: 60%;
+    padding: 12px 0;
+    background: transparent;
+    color: white;
+    border: 3px solid white;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    margin-top: 0;        /* pastikan ga ada jarak ekstra */
+}
