@@ -863,3 +863,165 @@ button:hover {
     justify-content: space-between;  /* nama kiri, harga kanan */
     font-size: 0.9rem;
 }
+
+/* =======================
+   PAGE 8 - PILIH KAPSTER
+======================= */
+
+.page8-container {
+    position: relative;
+    z-index: 4;
+    width: 75%;
+    margin: auto;
+    padding-top: 20%;
+    text-align: center;
+}
+
+.page8-title {
+    color: white;
+    font-size: 2.7rem;
+    font-weight: 800;
+    margin-bottom: 5%;
+}
+
+.page8-search {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.page8-list {
+    display: flex;
+    flex-direction: column;   /* biar kebawah */
+    gap: 12px;
+
+    max-height: 950px;        /* batas tinggi panel */
+    overflow-y: auto;         /* scroll vertikal */
+    overflow-x: hidden;       /* matikan scroll horizontal */
+
+    padding-right: 6px;
+}
+
+.page8-list::-webkit-scrollbar {
+    width: 6px;
+}
+.page8-list::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}
+.page8-list::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.15);
+}
+.page8-barber-card {
+    width: 100%;
+}
+
+.page8-barber-card {
+    border: 2px solid white;
+    border-radius: 14px;
+    padding: 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    background: rgba(255,255,255,0.03);
+}
+
+/* ✨ Efek saat dipilih */
+.page8-barber-card.selected {
+    border-color: #4EA8FF;
+    transform: scale(0.98);
+    box-shadow: 0 0 12px rgba(78,168,255,0.6);
+}
+.barber-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.barber-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.page8-barber-card {
+    text-align: left;
+}
+
+.barber-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px; 
+}
+
+.barber-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #415A77;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.barber-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.barber-desc {
+    font-size: 0.92rem;
+    opacity: 0.8;
+    line-height: 1.2;
+}
+
+.barber-rate {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    text-align: right;
+}
+
+
+.page8-btn-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;                     /* jarak antar tombol */
+    margin-top: 5%;
+}
+
+.page8-btn-primary,
+.page8-btn-secondary {
+    width: 400px;
+    background: #415A77;
+    border: 3px solid white;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 100;
+
+    padding: 8px 0;     /* lebih kecil */
+    margin: 0 !important; /* hapus margin bawaan */
+    line-height: 1;     /* hilangkan jarak vertikal */
+}
+
+.page8-btn-primary {
+    padding: 3%;
+}
+.page8-btn-secondary {
+    background: transparent;
+    font-size: 1.0rem;
+}

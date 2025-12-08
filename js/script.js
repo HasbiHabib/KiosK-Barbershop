@@ -216,73 +216,135 @@ function goToPage7() {
 // (PAGE 7)
 // ======================= 
 
-const basePrice = 20000;
+document.addEventListener("DOMContentLoaded", () => {
 
-const services = [
-    { name: "Hair Spa", price: 20000 },
-    { name: "Hair Wash", price: 15000 },
-    { name: "Beard Trim", price: 10000 },
-    { name: "Color Styling", price: 30000 },
-];
+    const listEl = document.querySelector(".page7-service-list");
+    const addonEl = document.querySelector(".page7-addon-list");
+    const totalEl = document.querySelector(".page7-total-price");
 
-let selected = [];
+    if (!listEl || !addonEl || !totalEl) return; // ✅ safe
 
-const listEl = document.querySelector(".page7-service-list");
-const addonEl = document.querySelector(".page7-addon-list");
-const totalEl = document.querySelector(".page7-total-price");
+    const basePrice = 20000;
 
-function renderServices() {
-    listEl.innerHTML = "";
+    const services = [
+        { name: "Hair Spa", price: 20000 },
+        { name: "Hair Wash", price: 15000 },
+        { name: "Beard Trim", price: 10000 },
+        { name: "Color Styling", price: 30000 },
+    ];
 
-    services.forEach((s, i) => {
-        const row = document.createElement("div");
-        row.className = "page7-service-item";
-        row.innerHTML = `
-            <div class="page7-service-info">
-                <span class="page7-service-name">${s.name}</span>
-                <span class="page7-service-price">Rp ${s.price/1000} K</span>
-            </div>
-            <div class="page7-toggle"></div>
-        `;
+    let selected = [];
 
+    function renderServices() {
+        listEl.innerHTML = "";
 
-        const toggle = row.querySelector(".page7-toggle");
-        toggle.addEventListener("click", () => toggleService(s, toggle));
+        services.forEach((s) => {
+            const row = document.createElement("div");
+            row.className = "page7-service-item";
+            row.innerHTML = `
+                <div class="page7-service-info">
+                    <span class="page7-service-name">${s.name}</span>
+                    <span class="page7-service-price">Rp ${s.price/1000} K</span>
+                </div>
+                <div class="page7-toggle"></div>
+            `;
 
-        listEl.appendChild(row);
-    });
-}
+            const toggle = row.querySelector(".page7-toggle");
+            toggle.addEventListener("click", () => toggleService(s, toggle));
 
-function toggleService(service, el) {
-    const active = selected.find(x => x.name === service.name);
-
-    if (active) {
-        selected = selected.filter(x => x.name !== service.name);
-        el.classList.remove("active");
-    } else {
-        selected.push(service);
-        el.classList.add("active");
+            listEl.appendChild(row);
+        });
     }
 
-    updatePrice();
-}
+    function toggleService(service, el) {
+        const active = selected.find(x => x.name === service.name);
 
-function updatePrice() {
-    addonEl.innerHTML = "";
-    let total = basePrice;
+        if (active) {
+            selected = selected.filter(x => x.name !== service.name);
+            el.classList.remove("active");
+        } else {
+            selected.push(service);
+            el.classList.add("active");
+        }
 
-    selected.forEach(s => {
-        const div = document.createElement("div");
-        div.innerHTML = `<span>${s.name}</span><span>Rp ${s.price/1000} K</span>`;
-        addonEl.appendChild(div);
-        total += s.price;
-    });
+        updatePrice();
+    }
 
-    totalEl.textContent = "Rp " + (total/1000) + " K";
-}
+    function updatePrice() {
+        addonEl.innerHTML = "";
+        let total = basePrice;
 
-renderServices();
+        selected.forEach(s => {
+            const div = document.createElement("div");
+            div.innerHTML = `<span>${s.name}</span><span>Rp ${s.price/1000} K</span>`;
+            addonEl.appendChild(div);
+            total += s.price;
+        });
+
+        totalEl.textContent = "Rp " + (total/1000) + " K";
+    }
+
+    renderServices();
+});
 
 function goToPage8() {
-    window.location.href = "PreviewHaircut.html";
+    window.location.href = "selectbarber.html";
 }
+
+
+
+// =======================
+// (PAGE 8) BARBER SELECT
+// =======================
+
+let selectedBarber = null;
+
+function initPage8() {
+    const cards = document.querySelectorAll(".page8-barber-card");
+
+    if (!cards.length) {
+        console.log("PAGE 8: Card tidak ditemukan");
+        return;
+    }
+
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+
+            // reset semua
+            cards.forEach(c => c.classList.remove("selected"));
+
+            // set yang diklik
+            card.classList.add("selected");
+            selectedBarber = card.dataset.name;
+
+            console.log("Barber dipilih:", selectedBarber);
+        });
+    });
+}
+
+// search
+function filterBarber() {
+    const input = document.querySelector(".page8-search").value.toLowerCase();
+    const cards = document.querySelectorAll(".page8-barber-card");
+
+    cards.forEach(card => {
+        const name = card.dataset.name;
+        card.style.display = name.includes(input) ? "block" : "none";
+    });
+}
+
+// navigation
+function goNext() {
+    if (!selectedBarber) {
+        alert("Pilih kapster terlebih dahulu");
+        return;
+    }
+    window.location.href = "summary.html";
+}
+
+function goBack() {
+    window.location.href = "additionalservice.html";
+}
+
+// init saat halaman siap
+document.addEventListener("DOMContentLoaded", initPage8);
