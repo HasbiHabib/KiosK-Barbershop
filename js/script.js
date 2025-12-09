@@ -438,10 +438,10 @@ document.getElementById("btnPage9Confirm")
 // PAGE 10 AUTO REDIRECT
 // ====================
 
-function gotoPage11() {
+document.getElementById("btnPage10Yes")?.addEventListener("click", () => {
     window.location.href = "page11.html";
-}
+});
 
-function goBack() {
-    window.history.back();
-}
+document.getElementById("btnPage10Back")?.addEventListener("click", () => {
+    history.back();
+});
