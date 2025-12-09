@@ -388,14 +388,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const faceImg = document.getElementById("facePreview");
     if (faceImg) faceImg.src = MOCK.photo;
 
-    // HAIRCUT LIST
-    const haircutUl = document.getElementById("haircutList");
-    if (haircutUl) {
-        haircutUl.innerHTML = "";
-        MOCK.haircutList.forEach(h => {
-            haircutUl.innerHTML += `<li>${h}</li>`;
-        });
-    }
+
 
     // KAPSTER
     const kapsterName = document.getElementById("kapsterName");
