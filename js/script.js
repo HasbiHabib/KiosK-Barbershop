@@ -175,9 +175,9 @@ function loadHaircutRecommendation(data) {
     document.querySelector(".haircut-main-img").src = data.mainImage;
     document.querySelector(".haircut-caption").innerHTML = 
         `Rekomendasi Terbaik Buatmu:<br><b>${data.title}</b>`;
-
     document.querySelector(".percentage-box span").textContent = data.percentage + "%";
 }
+
 
 
 // =======================
@@ -231,6 +231,10 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "Hair Wash", price: 15000 },
         { name: "Beard Trim", price: 10000 },
         { name: "Color Styling", price: 30000 },
+        { name: "Hair Spa", price: 20000 },
+        { name: "Hair Wash", price: 15000 },
+        { name: "Beard Trim", price: 10000 },
+        { name: "Color Styling", price: 30000 },
     ];
 
     let selected = [];
@@ -268,6 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         updatePrice();
+        updateStorage();
     }
 
     function updatePrice() {
@@ -287,6 +292,9 @@ document.addEventListener("DOMContentLoaded", () => {
     renderServices();
 });
 
+function updateStorage() {
+    localStorage.setItem("priceList", JSON.stringify(selected));
+}
 function goToPage8() {
     window.location.href = "selectbarber.html";
 }
@@ -316,7 +324,8 @@ function initPage8() {
             // set yang diklik
             card.classList.add("selected");
             selectedBarber = card.dataset.name;
-
+            localStorage.setItem("kapsterName", selectedBarber);
+            
             console.log("Barber dipilih:", selectedBarber);
         });
     });
@@ -339,7 +348,7 @@ function goNext() {
         alert("Pilih kapster terlebih dahulu");
         return;
     }
-    window.location.href = "summary.html";
+    window.location.href = "confirmOrder.html";
 }
 
 function goBack() {
@@ -348,3 +357,91 @@ function goBack() {
 
 // init saat halaman siap
 document.addEventListener("DOMContentLoaded", initPage8);
+
+function goToPage9() {
+    window.location.href = "confirmOrder.html";
+}
+
+
+// ====================================
+// PAGE 9 MOCK DATA (untuk preview)
+// ====================================
+
+window.addEventListener("DOMContentLoaded", () => {
+
+    const MOCK = {
+        photo: "Image/dummy_face.jpg",
+        haircutList: [
+            "Taper Fade",
+            "Side Cut"
+        ],
+        kapster: "Asep Bonteng",
+        priceList: [
+            { name: "Gentle Cut", price: 65000 },
+            { name: "Hair Spa", price: 65000 },
+            { name: "Hair Spa", price: 65000 },
+            { name: "Hair Spa", price: 65000 }
+        ]
+    };
+
+    // FOTO
+    const faceImg = document.getElementById("facePreview");
+    if (faceImg) faceImg.src = MOCK.photo;
+
+    // HAIRCUT LIST
+    const haircutUl = document.getElementById("haircutList");
+    if (haircutUl) {
+        haircutUl.innerHTML = "";
+        MOCK.haircutList.forEach(h => {
+            haircutUl.innerHTML += `<li>${h}</li>`;
+        });
+    }
+
+    // KAPSTER
+    const kapsterName = document.getElementById("kapsterName");
+    if (kapsterName) kapsterName.textContent = MOCK.kapster;
+
+    // PRICE LIST
+    const priceContainer = document.getElementById("priceList");
+    const totalEl = document.getElementById("totalPrice");
+
+    let total = 0;
+    if (priceContainer) {
+        priceContainer.innerHTML = "";
+
+        MOCK.priceList.forEach(item => {
+            total += item.price;
+            priceContainer.innerHTML += `
+                <div class="price-row">
+                    <span>${item.name}</span>
+                    <span>Rp ${item.price.toLocaleString("id-ID")}</span>
+                </div>
+            `;
+        });
+    }
+
+    if (totalEl) totalEl.textContent = "Rp " + total.toLocaleString("id-ID");
+});
+
+
+// Page 9 buttons
+document.getElementById("btnPage9Back")
+    ?.addEventListener("click", () => history.back());
+
+document.getElementById("btnPage9Confirm")
+    ?.addEventListener("click", () => {
+        window.location.href = "ReconfirmOrder.html";
+    });
+
+
+// ====================
+// PAGE 10 AUTO REDIRECT
+// ====================
+
+function gotoPage11() {
+    window.location.href = "page11.html";
+}
+
+function goBack() {
+    window.history.back();
+}

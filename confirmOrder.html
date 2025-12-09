@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hasil Pemindaian</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="kiosk-container page9">
+
+    <div class="bg-blue"></div>
+
+    <img class="logo" src="Image/logo/logo_barbershop.png" alt="logo">
+
+    <div class="page9-container">
+
+        <h1 class="page9-title">KONFIRMASI ORDER DAN<br>TREATMENT BOS</h1>
+
+        <div class="page9-flex-top">
+
+            <!-- PANEL HAIRCUT -->
+            <div class="page9-card-col">
+                <div class="page9-card small-card">
+                    <h2>Haircut</h2>
+                    <ul id="haircutList"></ul>
+                </div>
+                <div class="page9-card small-card">
+                    <h2>Kapster</h2>
+                    <p id="kapsterName"></p>
+                </div>
+            </div>
+
+            <!-- FOTO USER -->
+            <div class="page9-photo-box">
+                <img id="photoPreview" src="Image/Mock/haircut1.png" alt="foto user">
+            </div>
+
+
+        </div>
+
+        <!-- PANEL HARGA (LEBAR KE KANAN) -->
+        <div class="page9-card price-card">
+            <h2>Rincian Harga</h2>
+
+            <div id="priceList"></div>
+
+            <div class="price-total">
+                <span>TOTAL HARGA</span>
+                <span id="totalPrice"></span>
+            </div>
+        </div>
+
+        <div class="page9-btn-col">
+            <button class="page9-btn-primary" id="btnPage9Confirm">Konfirmasi</button>
+            <button class="page9-btn-secondary" id="btnPage9Back">Kembali</button>
+        </div>
+
+    </div>
+</div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

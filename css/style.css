@@ -1025,3 +1025,207 @@ button:hover {
     background: transparent;
     font-size: 1.0rem;
 }
+
+/* ===========================
+   PAGE 9 ORDER LAYOUT
+=========================== */
+
+.page9-container {
+    width: 85%;
+    margin: auto;
+    padding-top: 20%;
+    text-align: center;
+    position: relative;
+    z-index: 4;
+}
+
+.page9-title {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+.page9-flex-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+/* PANEL KECIL (HAIRCUT + KAPSTER) */
+.small-card {
+    width: 120%;
+}
+
+.page9-card-col {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 40px;                     /* jarak antar tombol */
+    margin-top: 0%;
+}
+
+.page9-card {
+    border: 2px solid white;
+    border-radius: 18px;
+    padding: 45px;
+    background: rgba(255,255,255,0.05);
+    color: white;
+    text-align: left;
+}
+
+.page9-card h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.page9-card ul {
+    margin-left: 15px;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.page9-photo-box {
+    width: 49%;
+    border-radius: 18px;
+    border: 3px solid white;
+    padding: 10px;
+}
+
+.page9-photo-box img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* CARD HARGA → LEBAR FULL */
+.price-card {
+    width: 100%;
+    margin-top: 25px;
+}
+
+.price-card h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* LIST HARGA */
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+.price-total {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 2px solid white;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.page9-desc {
+    color: #dfe7f1;
+    font-size: 1.1rem;
+    margin: 25px 0;
+}
+
+.page9-btn-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;                     /* jarak antar tombol, bisa kamu kecilkan */
+    margin-top: 10%;
+}
+
+/* BUTTON */
+.page9-btn-primary,
+.page9-btn-secondary {
+    width: 60%;
+    padding: 16px 0;
+    font-size: 1.4rem;
+    border-radius: 14px;
+    border: 3px solid white;
+    cursor: pointer;
+    margin: 0;                    /* FIX: reset margin bawaan */
+}
+
+.page9-btn-primary {
+    background: #415A77;
+    color: white;
+}
+
+.page9-btn-secondary {
+    background: transparent;
+    color: white;
+}
+
+
+
+/* ===========================
+   PAGE 10
+=========================== */
+
+.page10-body {
+    width: 100%;
+    height: 100vh;
+    background: #0D1B2A;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.page10-container {
+    text-align: center;
+    width: 80%;
+}
+
+.page10-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.page10-subtext {
+    font-size: 1.3rem;
+    opacity: 0.85;
+    margin-bottom: 40px;
+    line-height: 1.4;
+}
+
+/* BUTTON WRAPPER */
+.page10-btn-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;               /* Jarak antar tombol */
+}
+
+/* BUTTON STYLE */
+.page10-btn-primary,
+.page10-btn-secondary {
+    width: 60%;
+    padding: 16px 0;
+    font-size: 1.4rem;
+    border-radius: 14px;
+    border: 3px solid white;
+    cursor: pointer;
+    margin: 0;             /* Biar tidak nambah gap */
+}
+
+.page10-btn-primary {
+    background: #415A77;
+    color: white;
+}
+
+.page10-btn-secondary {
+    background: transparent;
+    color: white;
+}
