@@ -439,9 +439,17 @@ document.getElementById("btnPage9Confirm")
 // ====================
 
 document.getElementById("btnPage10Yes")?.addEventListener("click", () => {
-    window.location.href = "page11.html";
+    window.location.href = "Antrian.html";
 });
 
 document.getElementById("btnPage10Back")?.addEventListener("click", () => {
     history.back();
 });
+
+// ====================
+// PAGE 11
+// ====================
+
+function goToHome() {
+     window.location.href = "Index.html";
+}
